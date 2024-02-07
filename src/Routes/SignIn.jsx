@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate, Link } from 'react-router-dom';
-
+// Importaciones para las alertas
+import Swal from 'sweetalert2';
 export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,12 +21,21 @@ export function SignIn() {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((user) => {
+        Swal.fire({
+          title: 'Inicion de sesion exitoso',
+          text: 'Bienvenido',
+          icon: 'success',
+        });
         console.log(user);
         navigate('/home');
       })
       .catch((error) => {
         console.log(error);
-        alert('Usuario o Contraseña Incorrectos');
+        Swal.fire({
+          title: 'Error de inicio de sesión',
+          text: 'Usuario o contraseña incorrectos',
+          icon: 'error',
+        });
       });
   }
 

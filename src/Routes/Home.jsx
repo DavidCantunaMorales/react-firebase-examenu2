@@ -6,7 +6,7 @@ import { database } from '../firebase/firebase.config';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 // Importaciones para las alertas
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+
 // Iconos
 import {
   RiEdit2Line,
@@ -16,7 +16,6 @@ import {
 
 export function Home() {
   const [products, setProducts] = useState([]);
-  const MySwal = withReactContent(Swal);
   // Autenticacion
   const auth = getAuth();
 
@@ -52,18 +51,23 @@ export function Home() {
   };
 
   const alertDelete = (id) => {
-    MySwal.fire({
-      title: '¿Eliminar Producto?',
-      text: 'No podras revertir los cambios',
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: 'No podras revertir los cambios!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Si, eliminar',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar!',
+      cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
         deleteProducts(id);
-        Swal.fire('Eliminado!', 'El Producto ha sido eliminado', 'Correcto');
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El producto ha sido eliminado correctamente.',
+          icon: 'success',
+        });
       }
     });
   };
