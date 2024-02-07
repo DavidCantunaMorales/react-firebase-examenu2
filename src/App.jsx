@@ -11,6 +11,10 @@ import { Create } from './Routes/Create';
 function App() {
   const router = createBrowserRouter([
     {
+      path: '/',
+      element: <SignIn />,
+    },
+    {
       path: '*',
       element: (
         <Protected>
