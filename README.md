@@ -36,3 +36,15 @@ Tambien se puede usar el usuario ya creado:
    ```
 Una vez iniciada la aplicacion podramos ver una tabla de productos ya ingresados, donde podremos crear, actualiza y borrar productos.
 
+## Integrantes
+- Edwin Cantuña
+- Matias Padrón
+- Sebastian Torres
+
+## Nota
+- El proyecto esta en producción en la plataforma Vercel, pero tenemos un pequeño bug con la recarga de la pagina, se puede usar sin problemas pero si recargar la pagina.
+- Si por algun motivo se recargo la pagina ingresar al siguiente link
+   ```bash
+   https://react-firebase-examenu2.vercel.app/
+   ```
+- En cualquier caso la aplicacion esta funcional y completa al hacer un git clone del proyecto como espeficique anteriormente.
