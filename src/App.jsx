@@ -16,11 +16,7 @@ function App() {
     },
     {
       path: '*',
-      element: (
-        <Protected>
-          <Home />
-        </Protected>
-      ),
+      element: <SignIn />,
     },
     {
       path: '/home',
