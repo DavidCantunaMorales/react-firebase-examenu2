@@ -28,7 +28,7 @@ Esto descargara todas las dependencias necesarias para ejecutar el proyecto y ab
 Estamos usando Firebase como base de datos no relacional, la configuración y inizialización de esta se encuentra en la carpeta `firebase` en este caso como ya esta configurado se conectara directamente a la base de datos y se podra usar sin ningun problema.
 
 ## Como usar
-Vamos a tener que crear una nueva cuenta para poder ingresar a la aplicacion aqui se tendra que poner un correo y una contraseña de minimo 6 caracteres.
+Vamos a tener que crear una nueva cuenta para poder ingresar a la aplicacion aqui se tendra que poner un correo y una contraseña de minimo 6 caracteres.  
 Tambien se puede usar el usuario ya creado:
    ```bash
    david@gmail.com
