@@ -7,6 +7,8 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 // Importaciones para las alertas
 import Swal from 'sweetalert2';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 // Iconos
 import {
   RiEdit2Line,
@@ -85,6 +87,25 @@ export function Home() {
 
     getProducts();
   }, []);
+
+  useEffect(() => {
+    // Comparar el tamaño anterior de la lista con el tamaño actual
+    if (products.length > 0) {
+      // Obtener el tamaño anterior de la lista de productos desde el almacenamiento local
+      const prevProductsLength = parseInt(
+        localStorage.getItem('prevProductsLength') || '0'
+      );
+      // Comparar el tamaño anterior con el tamaño actual
+      if (products.length > prevProductsLength) {
+        // Si el tamaño actual es mayor, enviar una notificación
+        notify();
+      }
+      // Actualizar el tamaño anterior en el almacenamiento local
+      localStorage.setItem('prevProductsLength', products.length.toString());
+    }
+  }, [products]);
+
+  const notify = () => toast.success('Producto añadido');
 
   return (
     <div>
@@ -168,6 +189,9 @@ export function Home() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div>
+          <Toaster position="bottom-right" reverseOrder={false} />s
         </div>
       </div>
     </div>
