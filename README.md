@@ -47,4 +47,4 @@ Una vez iniciada la aplicacion podramos ver una tabla de productos ya ingresados
    ```bash
    https://react-firebase-examenu2.vercel.app/
    ```
-- En cualquier caso la aplicacion esta funcional y completa al hacer un git clone del proyecto como espeficique anteriormente.
+- En cualquier caso la aplicacion esta funcional y completa al hacer un git clone del proyecto como espeficique anteriormente y ejecutarla en local.
