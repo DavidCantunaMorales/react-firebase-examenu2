@@ -1,4 +1,3 @@
-/*
 import './App.css';
 import { SignIn } from './Routes/SignIn';
 import { SignUp } from './Routes/SignUp';
@@ -56,35 +55,6 @@ function App() {
   return (
     <AuthContext>
       <RouterProvider router={router}></RouterProvider>
-    </AuthContext>
-  );
-}
-
-export default App;
-*/
-
-import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { SignIn } from './Routes/SignIn';
-import { SignUp } from './Routes/SignUp';
-import { Home } from './Routes/Home';
-import { Protected } from './Routes/Protected';
-import { Edit } from './Routes/Edit';
-import { Create } from './Routes/Create';
-import { AuthContext } from './Context/AuthContext';
-
-function App() {
-  return (
-    <AuthContext>
-      <Router>
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Protected>
-          <Route path={['/', '/home']} element={<Home />} />
-          <Route path="/edit/:id" element={<Edit />} />
-          <Route path="/create" element={<Create />} />
-        </Protected>
-      </Router>
     </AuthContext>
   );
 }
