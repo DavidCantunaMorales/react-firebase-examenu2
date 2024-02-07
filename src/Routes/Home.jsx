@@ -97,7 +97,6 @@ export function Home() {
       );
       // Comparar el tamaño anterior con el tamaño actual
       if (products.length > prevProductsLength) {
-        // Si el tamaño actual es mayor, enviar una notificación
         notify();
       }
       // Actualizar el tamaño anterior en el almacenamiento local
@@ -191,7 +190,7 @@ export function Home() {
           </table>
         </div>
         <div>
-          <Toaster position="bottom-right" reverseOrder={false} />s
+          <Toaster position="bottom-right" reverseOrder={false} />
         </div>
       </div>
     </div>
