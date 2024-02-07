@@ -25,6 +25,7 @@ export function SignIn() {
       })
       .catch((error) => {
         console.log(error);
+        alert('Usuario o Contraseña Incorrectos');
       });
   }
 

@@ -27,6 +27,11 @@ export function SignUp() {
       })
       .catch((error) => {
         console.log(error);
+        if (error.code === 'auth/weak-password') {
+          alert('La contraseña debe tener al menos 6 caracteres');
+        } else {
+          alert('Ha ocurrido un error al crear la cuenta');
+        }
       });
   }
 
