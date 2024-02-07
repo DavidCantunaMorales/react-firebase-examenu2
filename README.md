@@ -24,4 +24,15 @@ Dentro de la carpeta raiz del proyecto abrir una termina y ejecutar el siguiente
    ```
 Esto descargara todas las dependencias necesarias para ejecutar el proyecto y abrira una pestaña del navegador con la ejecución.
 
-## 
+## Firebase
+Estamos usando Firebase como base de datos no relacional, la configuración y inizialización de esta se encuentra en la carpeta `firebase` en este caso como ya esta configurado se conectara directamente a la base de datos y se podra usar sin ningun problema.
+
+## Como usar
+Vamos a tener que crear una nueva cuenta para poder ingresar a la aplicacion aqui se tendra que poner un correo y una contraseña de minimo 6 caracteres.
+Tambien se puede usar el usuario ya creado:
+   ```bash
+   david@gmail.com
+   david123456
+   ```
+Una vez iniciada la aplicacion podramos ver una tabla de productos ya ingresados, donde podremos crear, actualiza y borrar productos.
+
