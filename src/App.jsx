@@ -64,7 +64,7 @@ export default App;
 */
 
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { SignIn } from './Routes/SignIn';
 import { SignUp } from './Routes/SignUp';
 import { Home } from './Routes/Home';
@@ -77,15 +77,13 @@ function App() {
   return (
     <AuthContext>
       <Router>
-        <Switch>
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} />
-          <Protected>
-            <Route exact path={['/', '/home']} component={Home} />
-            <Route exact path="/edit/:id" component={Edit} />
-            <Route exact path="/create" component={Create} />
-          </Protected>
-        </Switch>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Protected>
+          <Route path={['/', '/home']} element={<Home />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/create" element={<Create />} />
+        </Protected>
       </Router>
     </AuthContext>
   );
