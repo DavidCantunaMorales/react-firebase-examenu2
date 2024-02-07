@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
+// Importaciones para las alertas
+import Swal from 'sweetalert2';
 
 export function SignUp() {
   const [email, setEmail] = useState('');
@@ -23,14 +25,27 @@ export function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((user) => {
         console.log(user);
+        Swal.fire({
+          title: 'Cuenta creada correctamente',
+          text: 'Bienvenido',
+          icon: 'success',
+        });
         navigate('/home');
       })
       .catch((error) => {
         console.log(error);
         if (error.code === 'auth/weak-password') {
-          alert('La contraseña debe tener al menos 6 caracteres');
+          Swal.fire({
+            title: 'Error al crear la cuenta',
+            text: 'La contraseña debe tener al menos 6 caracteres',
+            icon: 'error',
+          });
         } else {
-          alert('Ha ocurrido un error al crear la cuenta');
+          Swal.fire({
+            title: 'Error al crear la cuenta',
+            text: 'Usuario o contraseña incorrectos',
+            icon: 'error',
+          });
         }
       });
   }

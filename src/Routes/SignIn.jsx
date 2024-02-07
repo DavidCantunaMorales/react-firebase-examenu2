@@ -3,6 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate, Link } from 'react-router-dom';
 // Importaciones para las alertas
 import Swal from 'sweetalert2';
+
 export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
