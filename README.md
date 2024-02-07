@@ -42,9 +42,8 @@ Una vez iniciada la aplicacion podramos ver una tabla de productos ya ingresados
 - Sebastian Torres
 
 ## Nota
-- El proyecto esta en producción en la plataforma Vercel, pero tenemos un pequeño bug con la recarga de la pagina, se puede usar sin problemas pero si recargar la pagina.
-- Si por algun motivo se recargo la pagina ingresar al siguiente link
+- El proyecto esta en producción en la plataforma Vercel al cual le añadiremos mejoras constantemente
    ```bash
    https://react-firebase-examenu2.vercel.app/
    ```
-- En cualquier caso la aplicacion esta funcional y completa al hacer un git clone del proyecto como espeficique anteriormente y ejecutarla en local.
+- La aplicacion esta funcional y completa al hacer un git clone del proyecto como espeficique anteriormente y ejecutarla en local.
